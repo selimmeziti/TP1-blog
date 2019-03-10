@@ -1,1 +1,1 @@
-<div *ngFor="let post of posts"><app-post-list-item [post]="post"></app-post-list-item></div>
+<div *ngFor="let post of posts; let i = index"><app-post-list-item [post]="post" [indexPost]="i"></app-post-list-item></div>

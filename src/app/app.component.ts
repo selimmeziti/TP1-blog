@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-root',
@@ -6,24 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  posts = [
-    {
-      title: 'Post 1',
-      content: 'Le Loreopularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et,.',
-      loveIts: 1,
-      createdAt: Date.now()
-    },
-    {
-      title: 'Post 2',
-      content: 'Le Loreopularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et,.',
-      loveIts: -1,
-      createdAt: Date.now()
-    },
-    {
-      title: 'Post 3',
-      content: 'Le Loreopularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et,.',
-      loveIts: 5,
-      createdAt: Date.now()
-    }
-  ];
+
+  constructor(){
+    // Init Firebase
+    const config = {
+      apiKey: "AIzaSyAGxds_mxRKsOTE1fv-vFlMZkCNQqvoXn8",
+      authDomain: "post-765f5.firebaseapp.com",
+      databaseURL: "https://post-765f5.firebaseio.com",
+      projectId: "post-765f5",
+      storageBucket: "post-765f5.appspot.com",
+      messagingSenderId: "466116157260"
+    };
+    firebase.initializeApp(config);
+  }
 }
